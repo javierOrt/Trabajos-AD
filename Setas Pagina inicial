@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body align="center">
+
+	<form action="champi.php" method="post">
+numero de filas y columnas:<input type="number" name="filasycolumnas">
+<br>
+<br>
+<table align="center">
+	<th align="center" colspan="8">Vida</th>
+	<tr>
+		<td align="center">1</td>
+		<td align="center">2</td>
+		<td align="center">3</td>
+		<td align="center">4</td>
+		<td align="center">5</td>
+		<td align="center">6</td>
+		<td align="center">7</td>
+		<td align="center">8</td>
+	</tr>
+	<tr>
+		<td><input type="checkbox" name="vida1"></td>
+		<td><input type="checkbox" name="vida2"></td>
+		<td><input type="checkbox" name="vida3"></td>
+		<td><input type="checkbox" name="vida4"></td>
+		<td><input type="checkbox" name="vida5"></td>
+		<td><input type="checkbox" name="vida6"></td>
+		<td><input type="checkbox" name="vida7"></td>
+		<td><input type="checkbox" name="vida8"></td>
+	</tr>
+</table>
+<br>
+<br>
+<table  align="center">
+<th align="center" colspan="8">Muerte</th>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+		<td>5</td>
+		<td>6</td>
+		<td>7</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td align="center"><input type="checkbox" name="muerte1"></td>
+		<td align="center"><input type="checkbox" name="muerte2"></td>
+		<td align="center"><input type="checkbox" name="muerte3"></td>
+		<td align="center"><input type="checkbox" name="muerte4"></td>
+		<td align="center"><input type="checkbox" name="muerte5"></td>
+		<td align="center"><input type="checkbox" name="muerte6"></td>
+		<td align="center"><input type="checkbox" name="muerte7"></td>
+		<td align="center"><input type="checkbox" name="muerte8"></td>
+	</tr>
+</table>
+<br>
+<br>
+<table  align="center">
+	<tr><td>Toro:</td><td><input type="checkbox" name="toro"></td></tr>
+</table>
+<br>
+<br>
+<input type="submit" name="pasar" value="Jugar" />
+</form>
+</body>
+</html>
