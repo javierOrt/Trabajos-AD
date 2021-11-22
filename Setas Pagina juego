@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <?php
+  var_export($_POST);
+  ?>
+  
+<head>
+	<script>
+    function pulsa (x,y,contador)
+    {
+      document.getElementById("imagen"+contador).value = 'seta.png';
+      document.getElementById("coordenadaX").value = x;
+      document.getElementById("coordenadaY").value = y;
+      document.getElementById("setaForm").submit();
+    }
+  </script>
+	
+  <title>MATRIZ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body align="center">
+
+  <form action="champi.php" method="post" id="setaForm">
+  
+  <input type="hidden" id="coordenadaX" name="coordenadaX"/>
+  <input type="hidden" id="coordenadaY" name="coordenadaY"/>
+  <input type="hidden" name="filasycolumnas" value="<?php echo($_POST['filasycolumnas'])?>" />
+
+	
+  <div align="center">
+	 <table border="1px" cellpadding="30px">
+       <?php
+       $contador=0;
+       $matriz=$_POST["filasycolumnas"];
+
+       for ($y=0; $y < $matriz ; $y++)
+       {
+         echo "<tr >";
+          for ($x=0; $x < $matriz ; $x++)
+          {
+          if (isset($_POST['imagen'.$contador])) {
+           $imagen = (($_POST['imagen'.$contador]=='seta.png')?'seta.png':'cesped.png');  
+          }
+          else
+          {
+            $imagen = "cesped.png";
+          }
+              echo '<input type="hidden" value="'.$imagen.'" id="imagen'.$contador.'" name="imagen'.$contador.'"/>';
+              echo "<td onclick='pulsa(".$x.",".$y.",".$contador.")'><img src='".$imagen."' height='46px' width='46px'></td>";
+
+              $contador++; 
+          }
+
+          echo "</tr>";
+       }    
+       ?>
+     </table>
+     <br>
+     <br>
+
+     <table border="1px" cellpadding="30px">
+     	<tr><td><input type="button" name="start" value="start"> <input type="button" name="finish" value="end"> segundos: <input type="number" name="segundos" >  </td><td><input type="button" value="pasar dia" name="pdia"></td></tr>
+     	
+     </table>
+  </div>
+</form>
+</body>
+</html>
